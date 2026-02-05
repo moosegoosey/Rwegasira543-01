@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import React from 'react';
+import Header from '@/layout/header';
+import Footer from '@/layout/footer';
+import Aside from '@/layout/aside';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -27,7 +31,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Header/>
+        <div className="grid grid-cols-[350px_1fr] gap-4">
+          <Aside>{}</Aside>
+          <main>{children}</main>
+        </div>
+        <Footer/>
       </body>
     </html>
   );
